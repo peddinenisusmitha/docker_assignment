@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
-const API = "http://localhost:9000/printing";
+const API = `${import.meta.env.VITE_API_URL}/printing`;
 
 function App() {
   const [prints, setPrints] = useState([]);
