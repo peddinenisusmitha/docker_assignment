@@ -35,7 +35,7 @@ jobs:
       - name: Build and push frontend image
         uses: docker/build-push-action@v5
         with:
-          context: ./PrintingService-frontend
-          file: ./PrintingService-frontend/frontend.Dockerfile
-          push: true
+          context: ./printing-frontend
+          file: ./printing-frontend/frontend.Dockerfile
+          push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/docker-frontend-2400031705:latest
